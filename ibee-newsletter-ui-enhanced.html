@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iBee Newsletter - Passion Into Power</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            max-width: 700px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-collapse: collapse;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #eff1f4;
+            padding: 20px;
+        }
+
+        .header img.logo {
+            width: 200px;
+        }
+
+        .header-links {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .header-links a {
+            color: #0a0a09;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+
+        .intro-section {
+            padding: 20px;
+            background-color: #e6f7ff; /* Light blue background */
+            border-bottom: 1px solid #d1e9ff;
+        }
+
+        .intro-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1890ff; /* Blue title color */
+            margin-bottom: 10px;
+        }
+
+        .intro-text {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .win-offer {
+            font-size: 0.9em;
+            color: #faad14; /* Yellow/Gold color for emphasis */
+            font-weight: bold;
+        }
+
+        .win-link {
+            color: #1890ff;
+            text-decoration: underline;
+        }
+
+        .win-link:hover {
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .content-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+        }
+
+        .content-block img {
+            width: 140px;
+            border-radius: 6px;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 6px;
+        }
+
+        .content-summary {
+            font-size: 0.9em;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Styles for Top Trends, Job Corner, and Level Up remain as previously defined */
+        .top-trends {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .top-trends-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f9bb7a;
+        }
+
+        .top-trends-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .top-trends-list li {
+            margin-bottom: 15px;
+            background-color: #fff8f0;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .top-trends-list li strong {
+            color: #e67e22;
+        }
+
+        .top-trends-list li ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+            color: #555;
+        }
+
+        .job-corner {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job-corner-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #00acc1;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #b2ebf2;
+        }
+
+        .job-corner-intro {
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .job-corner-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-corner-list li {
+            margin-bottom: 10px;
+            background-color: #e0f2f7;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .job-corner-list li strong {
+            color: #00acc1;
+        }
+
+        .level-up {
+            padding: 20px;
+            background-color: #f0f8ea;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin: 15px 20px;
+        }
+
+        .level-up-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #388e3c;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #81c784;
+            text-align: center;
+        }
+
+        .level-up-text {
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            color: #555;
+            text-align: center;
+        }
+
+        .level-up-rewards {
+            margin-top: 20px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .level-up-rewards li {
+            background-color: #f1f8e9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .level-up-rewards li strong {
+            color: #388e3c;
+        }
+
+        .referral-info {
+            font-size: 0.95em;
+            margin-top: 20px;
+            color: #555;
+            text-align: center;
+        }
+
+        .share-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #388e3c;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .referral-link {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 10px;
+            text-align: center;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.85em;
+            background-color: #f0f0f0;
+            color: #666;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .footer a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+
+        @media (max-width: 600px) {
+            .content-block {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-block img {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .content-text {
+                text-align: center;
+            }
+
+            .level-up-rewards li {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td class="header">
+            <a href="https://ibeeanalytics.com">
+                <img src="https://ibeeanalytics.com/newsletter/ibeeanalytics_logo.png" alt="iBee Analytics" class="logo">
+            </a>
+            <p class="header-links">
+                <a href="mailto:contact@ibeeanalytics.com">Email</a> |
+                <a href="https://ibeeanalytics.com">Website</a>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="intro-section">
+            <h2 class="intro-title">iBee's Latest News Highlights – Ready for Exploration!</h2>
+            <p class="intro-text">
+                Stay updated with iBee Analytics, share with friends, and get a chance to win a <strong class="win-offer">GoPro HERO13 Black Bundle</strong>!
+                <a href="#" class="win-link">Subscribe now</a> and let your winning streak begin.
+            </p>
+            <p class="intro-text">
+                <strong style="color: #1890ff;">AI-Enhanced Marketing Solutions</strong>
+            </p>
+            <p class="intro-text">
+                iBee Analytics leverages AI-driven digital marketing to boost your online presence with services like SEO and cloud solutions. Let us help you thrive in the digital world!
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="section">
+            <div class="content-block">
+                <img src="https://ibeeanalytics.com/newsletter/jan-4-1.jpg" alt="Misinformation">
+                <div class="content-text">
+                    <div class="content-title">Misinformation vs Disinformation</div>
+                    <div class="content-summary">
+                        In today's digital age, information is at our fingertips. However, not all information is created equal...
+                    </div>
+                    <a class="read-more" href="https://ibeeanalytics.com" target="_blank">Read More</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="section">
+            <div class="content-block">
+                <img src="https://ibeeanalytics.com/newsletter/jan-4-2.jpg" alt="Non-Verbal Communication">
+                <div class="content-text">
+                    <div class="content-title">The Power of Non-Verbal Communication</div>
+                    <div class="content-summary">
+                        Non-verbal communication, often called body language, plays a significant role in how we interact with others...
+                    </div>
+                    <a class="read-more" href="https://ibeeanalytics.com" target="_blank">Read More</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="section">
+            <div class="content-block">
+                <img src="https://ibeeanalytics.com/newsletter/jan-4-3.jpg" alt="Leadership">
+                <div class="content-text">
+                    <div class="content-title">Master the Art of Leadership</div>
+                    <div class="content-summary">
+                        Leadership isn't a title; it's a force. It's the ability to command respect, inspire action and drive results...
+                    </div>
+                    <a class="read-more" href="https://ibeeanalytics.com" target="_blank">Read More</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="top-trends" style="padding: 20px; border-bottom: 1px solid #eee;">
+            <div style="background-color: #fcecdb; padding: 15px; border-radius: 8px;">
+                <h2 style="font-size: 1.3em; font-weight: bold; color: #e67e22; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #f9bb7a;">
+                    🔥 Top Trends: Hot Off the Press! 🔥
+                </h2>
+                <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                    <li style="margin-bottom: 15px;">
+                        <div style="background-color: #fff8f0; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                            <strong style="color: #e67e22;">💡 Learning Booster:</strong> 5 ChatGPT Prompts To Accelerate Your Learning
+                            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 8px; color: #555;">
+                                <li>
+                                    <strong style="color:#e67e22;">Skill-Specific Learning:</strong>
+                                    <span>
+                                        I Want to learn [insert skill]. Act as a professional tutor having experience of 5 years in this field and create a customized learning plan, including resources, exercises, and milestones. Break down the skill into manageable steps and provide actionable advice for progress.
+                                    </span>
+                                </li>
+                                <li>
+                                    <strong style="color:#e67e22;">Teaching Guide:</strong>
+                                    <span>
+                                        Be a coach for teaching [insert skill]. Suggest a daily routine, exercises, and evaluation methods to practice effectively. Include recommendations for online resources and strategies to overcome common challenges in learning this skill.
+                                    </span>
+                                </li>
+                                <li>
+                                    <strong style="color:#e67e22;">Learning Through Real-World Examples:</strong>
+                                    <span>
+                                        Teach me [insert skill]. Through real-world examples and case studies. Start by explaining the basics and then show practical applications in different contexts.
+                                    </span>
+                                </li>
+                                <li>
+                                    <strong style="color:#e67e22;">Learn Any Skill 10X Faster:</strong>
+                                    <span>
+                                        Help me learn [insert skill]. Quickly and efficiently. Design a condensed learning program focusing on core principles, essential techniques, and practice hacks.
+                                    </span>
+                                </li>
+                                <li>
+                                    <strong style="color:#e67e22;">Master Any Skill In 30 Days:</strong>
+                                    <span>
+                                        Create a 30-day challenge to help me learn and master [insert skill]. Each day should include a small task or a new concept to practice and master this skill in the given period.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="job-corner" style="padding: 20px; border-bottom: 1px solid #eee;">
+            <div style="background-color: #e0f7fa; padding: 15px; border-radius: 8px;">
+                <h2 style="font-size: 1.3em; font-weight: bold; color: #00acc1; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #b2ebf2;">
+                    💼 Job Corner: Your Next Opportunity Awaits! 🚀
+                </h2>
+                <p style="font-size: 0.95em; margin-bottom: 10px; color: #555;">
+                    Explore exciting <strong style="color: #00acc1;">current openings</strong> with better rates.
+                </p>
+                <p style="font-size: 0.95em; margin-bottom: 15px; color: #555;">
+                    <strong style="color: #00acc1;">We’re Hiring!</strong> Send your resume to
+                    <a href="mailto:hr@sdksolutionsllc.com" style="color: #00acc1; text-decoration: underline; font-weight: bold;">hr@sdksolutionsllc.com</a> and join our team today!
+                </p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">Solution Architect:</strong> <span style="color:#777;">Location: Denver</span>
+                    </li>
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">Technical Architect (in Supply Chain):</strong> <span style="color:#777;">Location: Remote</span>
+                    </li>
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">AWS Solutions Architect:</strong> <span style="color:#777;">Location: Remote</span>
+                    </li>
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">Operations Lead (7+ years experience):</strong> <span style="color:#777;">Location: Remote</span>
+                    </li>
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">AWS DevOps:</strong> <span style="color:#777;">Location: Remote</span>
+                    </li>
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">Senior Enterprise Architect:</strong> <span style="color:#777;">Location: Houston, TX</span>
+                    </li>
+                    <li style="margin-bottom: 10px; background-color: #e0f2f7; padding: 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <strong style="color: #00acc1;">Developer-Full Stack Senior / Python Developer:</strong> <span style="color:#777;">Location: Must be on-site in McLean, VA T, W, TH</span>
+                    </li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="level-up" style="padding: 20px; background-color: #f0f8ea; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin: 15px 20px;">
+            <div style="background-color: #e0f2f7; padding: 15px; border-radius: 8px; text-align: center;">
+                <h2 style="font-size: 1.3em; font-weight: bold; color: #388e3c; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #81c784;">
+                    🚀 Level Up & Grab Awesome Rewards! 🎁
+                </h2>
+                <p style="font-size: 0.95em; margin-bottom: 10px; color: #555;">
+                    Share the iBee Analytics newsletter and earn some fantastic <strong style="color: #388e3c;">free iBee swag</strong>!
+                </p>
+
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="https://ibeeanalytics.com/newsletter/product.gif" alt="Products" style="max-width: 80%; height: auto; border-radius: 8px;">
+                </div>
+
+                <ul class="level-up-rewards" style="margin-top: 20px; list-style: none; padding-left: 0;">
+                    <li style="flex-basis: 100%; text-align: center; margin-bottom: 15px;">
+                        <strong style="color: #388e3c; font-size: 1.1em;">🎉 Your Rewards Await! 🎉</strong>
+                    </li>
+                    <li style="background-color: #f1f8e9; padding: 10px; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: bold; color: #388e3c;">5 Referrals</span>
+                        <span>Stickers</span>
+                    </li>
+                    <li style="background-color: #f1f8e9; padding: 10px; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: bold; color: #388e3c;">10 Referrals</span>
+                        <span>Pen Stand</span>
+                    </li>
+                    <li style="background-color: #f1f8e9; padding: 10px; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: bold; color: #388e3c;">15 Referrals</span>
+                        <span>Tote</span>
+                    </li>
+                    <li style="background-color: #f1f8e9; padding: 10px; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: bold; color: #388e3c;">25 Referrals</span>
+                        <span>Coffee Mug</span>
+                    </li>
+                    <li style="background-color: #f1f8e9; padding: 10px; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: bold; color: #388e3c;">50 Referrals</span>
+                        <span>Mystery Box</span>
+                    </li>
+                    <li style="background-color: #f1f8e9; padding: 10px; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: bold; color: #388e3c;">100 Referrals</span>
+                        <span>Work Table Setup</span>
+                    </li>
+                </ul>
+
+                <p class="referral-info" style="margin-top: 20px;">Your referral count: <span>"""+recipient[2]+"""</span></p>
+
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href='https://ibeeanalytics.com/check-letter.php?us="""+recipient[0]+"""' style='display:inline-block; padding:10px 20px; background-color:#388e3c; color:white; text-decoration:none; border-radius:5px; font-weight:bold;'>Click to Share</a>
+                </div>
+
+                <p class="referral-link" style="margin-top: 10px;">Or copy & paste your referral link to others: https://ibeeanalytics.com/check-letter.php?us="""+recipient[0]+"""</p>
+            </div>
+        </td>
+    </tr>    
+<tr>
+        <td class="footer">
+            <p style="margin:5px 0;">Connect with us on</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61552503802057">
+                    <img src="https://ibeeanalytics.com/newsletter/fb.png" alt="iBee Analytics Facebook" style="background-color: rgba(0, 0, 0, 0.1); border-radius: 3px;">
+                </a>
+                <a href="https://twitter.com/iBee_Analytics">
+                    <img src="https://ibeeanalytics.com/newsletter/twi.png" alt="iBee Analytics Twitter" style="background-color: rgba(0, 0, 0, 0.1); border-radius: 3px;">
+                </a>
+                <a href="https://www.instagram.com/ibee_analytics/">
+                    <img src="https://ibeeanalytics.com/newsletter/ins.png" alt="iBee Analytics Instagram" style="background-color: rgba(0, 0, 0, 0.1); border-radius: 3px;">
+                </a>
+                <a href="https://www.linkedin.com/company/ibee-analytics">
+                    <img src="https://ibeeanalytics.com/newsletter/link.png" alt="iBee Analytics LinkedIn" style="background-color: rgba(0, 0, 0, 0.1); border-radius: 3px;">
+                </a>
+            </div>
+            <p style="margin:5px 0;">Thank you for subscribing to our newsletter. Stay tuned for more updates!</p>
+            <p style="margin:5px 0;">© 2024 iBee Analytics. All rights reserved. | <a href="#">Unsubscribe</a></p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
